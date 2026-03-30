@@ -1,5 +1,7 @@
 # Stream Deck Profile Builder
 
+**Live**: https://deckout.mtajchert.com/ | **Repo**: https://github.com/tajchert/deckout
+
 Client-side web app for creating Elgato Stream Deck `.streamDeckProfile` files.
 
 ## Stack
@@ -41,6 +43,10 @@ Mini (3×2), Neo (4×2), MK.2 (5×3), XL (8×4), + (4×2), + XL (6×6), Pedal (3
 ### Supported action types
 
 Hotkey, Open, Website, Text, Multi-Action, Multi-Action Toggle, Navigation, Media
+
+### Button icons
+
+Each key can have an icon: emoji, background color, and/or uploaded image. Icons are stored as `IconConfig` in `Page.icons` (keyed by `"col,row"`). At export time, `icon-renderer.ts` draws them to a 288×288 canvas and outputs PNG blobs into the ZIP at `{col},{row}/CustomImages/state0.png`.
 
 ## Profile format
 

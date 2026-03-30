@@ -66,8 +66,8 @@ The official Stream Deck app is great for clicking around, but if you want to:
 
 ```bash
 # Clone and install
-git clone https://github.com/your-username/streamdeck-profile-builder.git
-cd streamdeck-profile-builder
+git clone https://github.com/tajchert/deckout.git
+cd deckout
 npm install
 
 # Start dev server
@@ -108,10 +108,10 @@ src/
 
 Contributions are welcome! Some ideas:
 
-- 🎨 Button icon editor (canvas-based 288×288 PNG generation)
 - 📥 Import existing `.streamDeckProfile` files for editing
 - 📋 Pre-built profile templates (developer, streaming, productivity)
 - 🔌 Plugin action support (OBS, Twitch, Philips Hue, etc.)
+- 🖼️ Icon library with curated sets for common use cases
 
 ## 📄 License
 
