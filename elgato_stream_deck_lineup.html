@@ -1,0 +1,177 @@
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:8px 0}
+.card{border:1px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:16px;background:var(--color-background-secondary);transition:border-color .2s}
+.card:hover{border-color:var(--color-border-secondary)}
+.card-title{font:500 16px var(--font-sans);color:var(--color-text-primary);margin-bottom:4px}
+.card-price{font:400 13px var(--font-sans);color:var(--color-text-secondary);margin-bottom:10px}
+.spec-row{display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--color-border-tertiary);font:400 13px var(--font-sans);color:var(--color-text-secondary)}
+.spec-row:last-child{border-bottom:none}
+.spec-label{color:var(--color-text-tertiary)}
+.spec-val{color:var(--color-text-primary);font-weight:500;text-align:right}
+.layout-visual{margin:10px 0 6px;display:flex;flex-direction:column;align-items:center;gap:4px}
+.btn-row{display:flex;gap:3px}
+.btn{width:22px;height:22px;border-radius:4px;border:1px solid var(--color-border-secondary)}
+.btn.lcd{background:var(--color-background-info)}
+.dial-row{display:flex;gap:6px;align-items:center}
+.dial{width:18px;height:18px;border-radius:50%;border:2px solid var(--color-border-primary);background:var(--color-background-tertiary)}
+.touch-strip{height:8px;border-radius:4px;background:var(--color-background-info);border:1px solid var(--color-border-secondary)}
+.pedal-row{display:flex;gap:6px}
+.pedal{width:28px;height:36px;border-radius:4px 4px 2px 2px;border:1px solid var(--color-border-secondary);background:var(--color-background-tertiary)}
+.info-bar{height:10px;border-radius:3px;background:var(--color-background-tertiary);border:1px solid var(--color-border-tertiary)}
+.touch-btn{width:10px;height:10px;border-radius:50%;border:1px solid var(--color-border-secondary);background:var(--color-background-tertiary)}
+.infobar-row{display:flex;align-items:center;gap:4px;justify-content:center}
+.tag{display:inline-block;padding:2px 7px;border-radius:10px;font:400 11px var(--font-sans);margin-right:4px}
+.tag-keys{background:var(--color-background-info);color:var(--color-text-info)}
+.tag-dials{background:var(--color-background-warning);color:var(--color-text-warning)}
+.tag-touch{background:var(--color-background-success);color:var(--color-text-success)}
+.tag-pedals{background:var(--color-background-danger);color:var(--color-text-danger)}
+.tag-nfc{background:#EEEDFE;color:#534AB7}
+.full-width{grid-column:1/-1}
+@media(max-width:500px){.grid{grid-template-columns:1fr}}
+</style>
+<div class="grid">
+
+<div class="card">
+  <div class="card-title">Stream Deck Mini</div>
+  <div class="card-price">~$80</div>
+  <div class="layout-visual">
+    <div class="btn-row"><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div></div>
+    <div class="btn-row"><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div></div>
+  </div>
+  <div><span class="tag tag-keys">6 LCD keys</span></div>
+  <div style="margin-top:8px">
+    <div class="spec-row"><span class="spec-label">Layout</span><span class="spec-val">3 × 2 grid</span></div>
+    <div class="spec-row"><span class="spec-label">Key type</span><span class="spec-val">Classic membrane</span></div>
+    <div class="spec-row"><span class="spec-label">Connection</span><span class="spec-val">USB-C</span></div>
+    <div class="spec-row"><span class="spec-label">Best for</span><span class="spec-val">Beginners, small desks</span></div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">Stream Deck Neo</div>
+  <div class="card-price">~$100</div>
+  <div class="layout-visual">
+    <div class="btn-row"><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div></div>
+    <div class="btn-row"><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div></div>
+    <div class="infobar-row"><div class="touch-btn"></div><div class="info-bar" style="width:80px"></div><div class="touch-btn"></div></div>
+  </div>
+  <div><span class="tag tag-keys">8 LCD keys</span><span class="tag tag-touch">Info bar + 2 touch buttons</span></div>
+  <div style="margin-top:8px">
+    <div class="spec-row"><span class="spec-label">Layout</span><span class="spec-val">4 × 2 grid + info bar</span></div>
+    <div class="spec-row"><span class="spec-label">Key type</span><span class="spec-val">Classic membrane</span></div>
+    <div class="spec-row"><span class="spec-label">Connection</span><span class="spec-val">USB-C (non-detachable)</span></div>
+    <div class="spec-row"><span class="spec-label">Best for</span><span class="spec-val">Entry-level, portability</span></div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">Stream Deck MK.2</div>
+  <div class="card-price">~$150</div>
+  <div class="layout-visual">
+    <div class="btn-row"><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div></div>
+    <div class="btn-row"><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div></div>
+    <div class="btn-row"><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div></div>
+  </div>
+  <div><span class="tag tag-keys">15 LCD keys</span></div>
+  <div style="margin-top:8px">
+    <div class="spec-row"><span class="spec-label">Layout</span><span class="spec-val">5 × 3 grid</span></div>
+    <div class="spec-row"><span class="spec-label">Key type</span><span class="spec-val">Classic or scissor</span></div>
+    <div class="spec-row"><span class="spec-label">Connection</span><span class="spec-val">USB-C (detachable)</span></div>
+    <div class="spec-row"><span class="spec-label">Best for</span><span class="spec-val">Most users (flagship)</span></div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">Stream Deck XL</div>
+  <div class="card-price">~$250</div>
+  <div class="layout-visual">
+    <div class="btn-row"><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div></div>
+    <div class="btn-row"><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div></div>
+    <div class="btn-row"><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div></div>
+    <div class="btn-row"><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div></div>
+  </div>
+  <div><span class="tag tag-keys">32 LCD keys</span></div>
+  <div style="margin-top:8px">
+    <div class="spec-row"><span class="spec-label">Layout</span><span class="spec-val">8 × 4 grid</span></div>
+    <div class="spec-row"><span class="spec-label">Key type</span><span class="spec-val">Classic membrane</span></div>
+    <div class="spec-row"><span class="spec-label">Connection</span><span class="spec-val">USB-C</span></div>
+    <div class="spec-row"><span class="spec-label">Best for</span><span class="spec-val">Power users, broadcast</span></div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">Stream Deck +</div>
+  <div class="card-price">~$200</div>
+  <div class="layout-visual">
+    <div class="btn-row"><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div></div>
+    <div class="btn-row"><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div></div>
+    <div class="touch-strip" style="width:100px"></div>
+    <div class="dial-row"><div class="dial"></div><div class="dial"></div><div class="dial"></div><div class="dial"></div></div>
+  </div>
+  <div><span class="tag tag-keys">8 LCD keys</span><span class="tag tag-dials">4 dials</span><span class="tag tag-touch">Touch strip</span></div>
+  <div style="margin-top:8px">
+    <div class="spec-row"><span class="spec-label">Layout</span><span class="spec-val">4 × 2 keys + strip + dials</span></div>
+    <div class="spec-row"><span class="spec-label">Key type</span><span class="spec-val">Classic membrane</span></div>
+    <div class="spec-row"><span class="spec-label">Touch strip</span><span class="spec-val">800 × 100 LCD panel</span></div>
+    <div class="spec-row"><span class="spec-label">Best for</span><span class="spec-val">Audio mixing, creative</span></div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">Stream Deck + XL</div>
+  <div class="card-price">~$350</div>
+  <div class="layout-visual">
+    <div class="btn-row"><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div></div>
+    <div class="btn-row"><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div></div>
+    <div class="btn-row"><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div></div>
+    <div class="btn-row"><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div></div>
+    <div class="btn-row"><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div></div>
+    <div class="btn-row"><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div></div>
+    <div class="touch-strip" style="width:120px"></div>
+    <div class="dial-row"><div class="dial"></div><div class="dial"></div><div class="dial"></div><div class="dial"></div><div class="dial"></div><div class="dial"></div></div>
+  </div>
+  <div><span class="tag tag-keys">36 LCD keys</span><span class="tag tag-dials">6 dials</span><span class="tag tag-touch">Touch strip</span></div>
+  <div style="margin-top:8px">
+    <div class="spec-row"><span class="spec-label">Layout</span><span class="spec-val">6 × 6 keys + strip + dials</span></div>
+    <div class="spec-row"><span class="spec-label">Key type</span><span class="spec-val">Classic membrane</span></div>
+    <div class="spec-row"><span class="spec-label">Touch strip</span><span class="spec-val">1200 × 100 LCD panel</span></div>
+    <div class="spec-row"><span class="spec-label">Best for</span><span class="spec-val">Pro broadcast, studios</span></div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">Stream Deck Pedal</div>
+  <div class="card-price">~$90</div>
+  <div class="layout-visual">
+    <div class="pedal-row"><div class="pedal"></div><div class="pedal"></div><div class="pedal"></div></div>
+  </div>
+  <div><span class="tag tag-pedals">3 foot pedals</span></div>
+  <div style="margin-top:8px">
+    <div class="spec-row"><span class="spec-label">Layout</span><span class="spec-val">3 pedals in a row</span></div>
+    <div class="spec-row"><span class="spec-label">Key type</span><span class="spec-val">Mechanical foot switches</span></div>
+    <div class="spec-row"><span class="spec-label">Connection</span><span class="spec-val">USB-C</span></div>
+    <div class="spec-row"><span class="spec-label">Best for</span><span class="spec-val">Hands-free control</span></div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">Stream Deck Studio</div>
+  <div class="card-price">~$700</div>
+  <div class="layout-visual">
+    <div class="btn-row"><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div></div>
+    <div class="btn-row"><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div></div>
+    <div class="btn-row"><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div></div>
+    <div class="btn-row"><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div><div class="btn lcd"></div></div>
+    <div class="dial-row" style="justify-content:space-between;width:100%"><div class="dial"></div><div class="dial"></div></div>
+  </div>
+  <div><span class="tag tag-keys">32 LCD keys</span><span class="tag tag-dials">2 dials (LED ring)</span><span class="tag tag-nfc">NFC</span></div>
+  <div style="margin-top:8px">
+    <div class="spec-row"><span class="spec-label">Layout</span><span class="spec-val">8 × 4 keys + 2 dials</span></div>
+    <div class="spec-row"><span class="spec-label">Form factor</span><span class="spec-val">19" rack-mount (1U)</span></div>
+    <div class="spec-row"><span class="spec-label">Connection</span><span class="spec-val">Ethernet PoE+ / USB-C</span></div>
+    <div class="spec-row"><span class="spec-label">Best for</span><span class="spec-val">Broadcast studios</span></div>
+  </div>
+</div>
+
+</div>
