@@ -1,6 +1,7 @@
 import { useProfileStore } from '../store/profile-store';
 import { useSelectedAction } from '../store/selectors';
 import { ActionTypeSelector } from './ActionTypeSelector';
+import { IconEditor } from './IconEditor';
 import { HotkeyForm } from './actions/HotkeyForm';
 import { OpenForm } from './actions/OpenForm';
 import { WebsiteForm } from './actions/WebsiteForm';
@@ -70,6 +71,7 @@ export function ActionPanel() {
             overflowY: 'auto',
             flex: 1,
           }}>
+            <IconEditor />
             <ActionTypeSelector />
             {action && <ActionForm action={action} />}
           </div>

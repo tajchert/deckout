@@ -2,6 +2,7 @@ import JSZip from 'jszip';
 import type { ProfileDefinition, WireBundleManifest, WirePageManifest } from './types';
 import { profileFolderIdFromUuid } from './folder-id';
 import { generateUuid } from './uuid';
+import { renderIconToBlob } from './icon-renderer';
 
 export async function generateProfileZip(profile: ProfileDefinition): Promise<Blob> {
   const zip = new JSZip();
@@ -42,6 +43,16 @@ export async function generateProfileZip(profile: ProfileDefinition): Promise<Bl
     };
 
     pageDir.file('manifest.json', JSON.stringify(pageManifest));
+
+    // Render and add icon images
+    for (const [key, icon] of Object.entries(page.icons)) {
+      if (!icon.emoji && !icon.imageDataUrl && icon.bgColor === '#1a1a1a') continue;
+      const pngBlob = await renderIconToBlob(icon);
+      pageDir
+        .folder(key)!
+        .folder('CustomImages')!
+        .file('state0.png', pngBlob);
+    }
   }
 
   return zip.generateAsync({ type: 'blob' });

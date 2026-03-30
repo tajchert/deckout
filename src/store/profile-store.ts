@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import type { ActionConfig, DeviceId, Page, TargetOS } from '../lib/types';
+import type { ActionConfig, DeviceId, IconConfig, Page, TargetOS } from '../lib/types';
 import { generateUuid } from '../lib/uuid';
 
 interface ProfileStore {
@@ -23,16 +23,18 @@ interface ProfileStore {
   selectKey: (key: string | null) => void;
   setAction: (key: string, action: ActionConfig) => void;
   clearAction: (key: string) => void;
+  setIcon: (key: string, icon: IconConfig) => void;
+  clearIcon: (key: string) => void;
 }
 
 let pageCounter = 0;
 
 export function createDefaultPage(name?: string): Page {
   pageCounter++;
-  return { id: generateUuid(), name: name ?? `Page ${pageCounter}`, actions: {} };
+  return { id: generateUuid(), name: name ?? `Page ${pageCounter}`, actions: {}, icons: {} };
 }
 
-const INITIAL_PAGE: Page = { id: '00000000-0000-4000-8000-000000000001', name: 'Page 1', actions: {} };
+const INITIAL_PAGE: Page = { id: '00000000-0000-4000-8000-000000000001', name: 'Page 1', actions: {}, icons: {} };
 
 export const useProfileStore = create<ProfileStore>((set) => ({
   profileName: 'My Profile',
@@ -57,6 +59,7 @@ export const useProfileStore = create<ProfileStore>((set) => ({
         id: generateUuid(),
         name: `Page ${state.pages.length + 1}`,
         actions: {},
+        icons: {},
       };
       return {
         pages: [...state.pages, newPage],
@@ -93,6 +96,26 @@ export const useProfileStore = create<ProfileStore>((set) => ({
       const actions = { ...page.actions };
       delete actions[key];
       page.actions = actions;
+      pages[state.currentPageIndex] = page;
+      return { pages };
+    }),
+
+  setIcon: (key, icon) =>
+    set((state) => {
+      const pages = [...state.pages];
+      const page = { ...pages[state.currentPageIndex] };
+      page.icons = { ...page.icons, [key]: icon };
+      pages[state.currentPageIndex] = page;
+      return { pages };
+    }),
+
+  clearIcon: (key) =>
+    set((state) => {
+      const pages = [...state.pages];
+      const page = { ...pages[state.currentPageIndex] };
+      const icons = { ...page.icons };
+      delete icons[key];
+      page.icons = icons;
       pages[state.currentPageIndex] = page;
       return { pages };
     }),

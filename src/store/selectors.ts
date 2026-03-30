@@ -15,3 +15,10 @@ export function useSelectedAction() {
     return s.selectedKey ? page?.actions[s.selectedKey] ?? null : null;
   });
 }
+
+export function useSelectedIcon() {
+  return useProfileStore((s) => {
+    const page = s.pages[s.currentPageIndex];
+    return s.selectedKey ? page?.icons[s.selectedKey] ?? null : null;
+  });
+}

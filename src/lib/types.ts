@@ -56,12 +56,21 @@ export type SimpleActionConfig = Extract<ActionConfig,
   | { type: 'media' }
 >;
 
+// ---- Icon Config ----
+
+export interface IconConfig {
+  emoji?: string;
+  bgColor: string;
+  imageDataUrl?: string;
+}
+
 // ---- Page / Profile ----
 
 export interface Page {
   id: string;
   name: string;
   actions: Record<string, ActionConfig>;
+  icons: Record<string, IconConfig>;
 }
 
 // ---- Wire Format Types (Elgato V2) ----
@@ -132,6 +141,7 @@ export interface ProfilePage {
   uuid: string;
   name: string;
   actions: Record<string, WireAction>;
+  icons: Record<string, IconConfig>;
 }
 
 export interface ProfileDefinition {

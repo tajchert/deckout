@@ -52,6 +52,7 @@ export function GridEditor() {
               col={col}
               row={row}
               action={page?.actions[key] ?? null}
+              icon={page?.icons[key] ?? null}
               isSelected={selectedKey === key}
               isPedal={isPedal}
               onClick={() => selectKey(selectedKey === key ? null : key)}
