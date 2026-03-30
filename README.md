@@ -4,6 +4,8 @@
 
 Build hotkeys, macros, website launchers, multi-action sequences, and more — all from your browser. Export a ready-to-import `.streamDeckProfile` file in seconds.
 
+🔗 **Try it now: [deckout.mtajchert.com](https://deckout.mtajchert.com/)**
+
 > No account. No install. No backend. Just open, configure, and download.
 
 <br/>

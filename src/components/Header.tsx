@@ -108,6 +108,23 @@ export function Header() {
 
       <div style={{ flex: 1 }} />
 
+      <a
+        href="https://github.com/tajchert/deckout"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{
+          color: 'var(--text-muted)',
+          fontSize: '13px',
+          textDecoration: 'none',
+          transition: 'color 0.15s',
+        }}
+        onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--text-secondary)')}
+        onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--text-muted)')}
+        title="View source on GitHub"
+      >
+        GitHub
+      </a>
+
       <button
         className="btn-accent"
         onClick={handleExport}
